@@ -1,60 +1,66 @@
 # byu-cs.github.io
 Class Descriptions for BYU CS department classes
+Other stuff to come in the future
 
-# Jekyll Cayman theme
+## Jekyll
 
-This is a [Jekyll][1] theme for [@jasonlong][2]'s [Cayman theme][4] on [GitHub Pages][3].
+This site is built using Jekyll, allowing for easily writing most of the content in markdown, which is then transformed into HTML with Jekyll and hosted via GitHub. The site theme is a modified form of [@jasonlong][2]'s [Cayman theme][4] on [GitHub Pages][3]. However, this should be easy to change in the future if someone finds something better out there, or wants to make their own.
 
-Cayman is a clean, responsive theme for [GitHub Pages](https://pages.github.com). This theme is available as an option if you use the [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator/) or you can copy the template and styles to use on your own.
+## Development
 
-You can preview the theme at http://jasonlong.github.io/cayman-theme or with real content at http://jasonlong.github.io/geo_pattern.
+For development, the best work flow would be to fork this repo (if you are not a member of the BYU-CS org), develop locally, make commits to your forked repo, and then submit a pull request with your finished changes. Running Jekyll locally will allow you to see your changes live on your local machine before pushing them to GitHub.
 
-![](http://cl.ly/image/1T3r3d18311V/content)
+### Installing Jekyll
 
-# How to use it?
+Jekyll is supported on OS X and Linux. It is not officially supported on Windows, but there are supposedly ways to get it running. For anyone running another OS, you're on your own.
 
-Download the theme @ http://github.com/pietromenna/jekyll-cayman-theme/archive/master.zip
+The gist of it all is the following steps:
 
-Unzip it and use it as a regular jekyll folder.
+1. Install Ruby (which will include the gem package manager for Ruby)
+2. Install Bundler: `$ gem install bundler`
+3. Fork & clone this repo
+4. Enter the repo directory and install dependencies: `$ bundle install`
 
-```
-$ unzip master.zip
-```
+At this point, all the dependencies should be resolved and installed, and you should be good to run it on your machine.
 
-Get inside the newly extracted folder
-```
-$ cd jekyll-cayman-theme
-```
+### Running Jekyll locally
 
-Get the required gems
-```
-$ bundle install
-```
+To run it locally, make some changes and use the following command: `$ jekyll serve`
 
-Use it!
+Alternatively, you can keep Jekyll running and it should detect changes and update the affected pages automatically. Remember to force reloading the page and sometimes clean out the generated files with `$ jekyll clean` if needed.
 
-```
-$ jekyll serve
-```
 
-For more details read about [Jekyll][1] on its web page.
+### Organization
 
-# Setup
+This section describes the general organization of the repository. Jekyll takes files that have YAML front matter (the section that is prefixed and suffixed with `---` on some pages) and transforms them accordingly. The attributed `layout` determines which layout from the root folder `_layouts` to use. The folder `_includes` contains chunks of HTML that are reused and inserted into pages or layouts. The folder `_site` contains the built product from Jekyll and is ignored in the Git repo. 
+
+#### Courses
+
+The folder `_courses` contains all of the individual course pages. It is configured as a collection within Jekyll, meaning that Jekyll will collect all of the pages within that have YAML front matter, transform them to HTML, and then make them available anywhere in the system. On the `courses/index.html` page, we then call and populate the page with the listing of all of the courses. This allows for ease of adding a course, just copy the provided template on `courses/howto.md`, add it as a markdown file in the `_courses` directory, and Jekyll will add it where it needs to be.
+
+#### Adding pages
+
+To add standalone pages, you should be able to look at the repo and get the general sense of how to go about adding things. Any root level folder should contain an `index.html` file, like the root directory for the repo or `./courses`, for example. Past that, you can add standalone HTML pages that do not contain any YAML front matter (Jekyll doesn't touch anything that doesn't have front matter), add HTML pages with front matter (like `index.html` in the root directory), or markdown pages with front matter (like `courses/howto.md`). The latter two will be transformed by Jekyll and will reside at `index.html` and `courses/howto.html` respectively.
+
+#### Configuration
 
 Some important configuration can be done in the file `_config.yml`. Please, check the Setup section in that file.
 
-
-## baseurl
+##### baseurl
 
 `baseurl` parameter is required in the case the site doesn't sit on the root of the domain. For example: http://pietromenna.github.io/jekyll-cayman-theme
 
-In the case above the baseurl should be set to "/jekyll-cayman-theme".
+In the case above the `baseurl` should be set to "/jekyll-cayman-theme".
 
 In the case the site sits in the root, you can leave `baseurl` as empty "".
 
-# License
+## Conclusions
 
-This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
+Hopefully, this site will enable easy gathering and dissemination of information among BYU CS students for other students. Feel free to ask questions here, or on the [BYU CS Slack](https://byucompsci.slack.com).
+
+## Theme License
+
+The Cayman theme is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
 
 [1]: http://jekyllrb.com/
 [2]: https://github.com/jasonlong
