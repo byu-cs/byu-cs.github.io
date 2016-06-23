@@ -1,0 +1,22 @@
+# Setup
+title:        BYU CS Student site
+tagline:      A site for students by students
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name: a bunch of people
+  url:  http://byu-cs.github.io 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
+
+# Collections
+collections:
+  courses:
+    output: true
