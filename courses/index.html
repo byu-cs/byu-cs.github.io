@@ -1,0 +1,17 @@
+---
+layout: default
+title: Courses
+---
+
+<div id="home">
+  <h1>Courses</h1>
+  <p>
+    This page hosts descriptions and information about courses from the perspective of BYU CS students that have already taken the respective course. If the course is not listed and you would like to add it, contributions are more than welcome. See the <a href="howto.html">How To</a> page for a simple template to use, and we look forward to your pull request!
+  </p>
+  <hr/>
+  <ul class="posts">
+    {% for course in site.courses %}
+      <li><a href="{{ site.baseurl }}{{ course.url }}">{{ course.title }} - {{ course.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
