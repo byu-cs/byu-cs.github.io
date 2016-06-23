@@ -4,10 +4,11 @@ title: {{ site.name }}
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <h1>Welcome</h1>
+  <p>
+    This site was created to allow BYU CS students to gather and disseminate information for other students. It was pointed out that unless resources were available on the official <a href="http://cs.byu.edu">BYU CS</a> website, students were left to find questions to answers on the <a href="https://theboard.byu.edu">100 Hour Board</a>, ask other students via social media, or searching the Internet. A <a href="https://byucompsci.slack.com">Slack team</a> was recently started, but for static content, a website seemed appropriate.  
+  </p>
+  <p>
+    Any one can fork this website, modify it, and submit pull requests to share information. At the moment, we've started with listing course descriptions that give a better idea of what technologies a course uses, what the projects are like, etc. If you have an idea of something that should be easy to find or that BYU CS students should know, pass it along and help the future generations of the program.
+  </p>
 </div>
