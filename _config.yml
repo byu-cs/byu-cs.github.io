@@ -1,5 +1,5 @@
 # Setup
-title:        BYU CS Student site
+title:        BYU CS Student Site
 tagline:      A site for students by students
 baseurl:      ""
 paginate:     1
@@ -7,7 +7,22 @@ paginate:     1
 # About/contact
 author:
   name: a bunch of people
-  url:  https://github.com/orgs/byu-cs/people 
+  url:  https://github.com/orgs/byu-cs/people
+
+# Repo
+repo:
+  name: BYU CS Student Site Repository
+  url: https://github.com/byu-cs/byu-cs.github.io
+
+# Wiki
+wiki:
+  name: BYU CS Student Wiki
+  url: https://github.com/byu-cs/wiki/wiki
+
+# Slack
+slack:
+  name: BYU CS Slack Team
+  url: https://byucompsci.slack.com
 
 # Gems
 gems:
